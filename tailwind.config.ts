@@ -37,9 +37,10 @@ export default {
   				foreground: 'hsl(var(--popover-foreground))'
   			},
 			primary: '#1c1c22',
+			gray_dark: '#232329',
   			accent: {
   				DEFAULT: '#00ff99',
-				hover: '00e187',
+				hover: '#00e187',
   			},
   			secondary: {
   				DEFAULT: 'hsl(var(--secondary))',
