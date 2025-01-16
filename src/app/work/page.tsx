@@ -14,7 +14,7 @@ import WorkSliderButtons from "@/components/WorkSliderButtons";
 
 export default function Work() {
   const [project, setProject] = useState(PROJECTS[0]);
-
+  
   function handleSlideChange(swiper: any) {
     setProject(PROJECTS[swiper.activeIndex]);
   }
@@ -38,10 +38,10 @@ export default function Work() {
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-300 capitalize">
                 {project.category} project
               </h2>
-              <p className="text-white/60 max-w-[400px]">
+              <p className="text-white/60 max-w-[540px]">
                 {project.description}
               </p>
-              <ul className="flex gap-4">
+              <ul className="flex flex-wrap gap-4 max-w-[540px]">
                 {project.stack.map((item, index) => (
                   <li 
                     key={index}
