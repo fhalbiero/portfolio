@@ -3,33 +3,7 @@
 import { BsArrowDownRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
-const SERVICES = [
-  {
-    num: '01',
-    title: 'Web Development',
-    description: 'We build websites that serve as powerful marketing tools and bring memorable brand experiences.',
-    href: "",
-  },
-  {
-    num: '02',
-    title: 'Web Development',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    href: "",
-  },
-  {
-    num: '03',
-    title: 'Web Development',
-    description: 'We build websites that serve as powerful marketing tools and bring memorable brand experiences.',
-    href: "",
-  },
-  {
-    num: '04',
-    title: 'Web Development',
-    description: 'We build websites that serve as powerful marketing tools and bring memorable brand experiences.',
-    href: "",
-  },
-]
+import { SERVICES } from "@/consts/services";
 
 export default function Services() {
   return (
