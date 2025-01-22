@@ -112,13 +112,13 @@ function Resume() {
                     {SKILLS.description}
                   </p>
                 </div>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 xl:gap-[30px]">
+                <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 xl:gap-[30px] mb-24">
                   {SKILLS.items.map((item, index) => (
                     <li key={index}>
                       <TooltipProvider delayDuration={100}>
                         <Tooltip>
-                          <TooltipTrigger className="w-full h-[150px] bg-gray_dark rounded-xl flex justify-center items-center group">
-                            <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                          <TooltipTrigger className="w-full h-[140px] bg-gray_dark rounded-xl flex justify-center items-center group">
+                            <div className="text-4xl group-hover:text-accent transition-all duration-300">
                               {<item.icon />}
                             </div>
                           </TooltipTrigger>

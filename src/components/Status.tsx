@@ -17,13 +17,17 @@ export default function Status() {
                 {STATS.map((item, index) => (
                     <div 
                         key={index}
-                        className="flex-1 flex gap-4 items-center justify-center xl:justify-start">
-                        <CountUp 
-                            className="text-4xl xl:text-6xl font-extrabold"
-                            end={item.num} 
-                            duration={5} 
-                            delay={1}
-                        />
+                        className="flex-1 flex gap-4 items-center justify-center xl:justify-start"
+                    >
+                        <div className="flex items-center">
+                            <CountUp 
+                                className="text-4xl xl:text-6xl font-extrabold"
+                                end={item.num} 
+                                duration={5} 
+                                delay={1}
+                            />
+                            <p className="text-2xl xl:text-4xl text-white/90">+</p>
+                        </div>
                         <p className={`${item.text.length > 15 ? 'max-w-[150px]' : 'max-w-[100px]'} leading-snug text-white/80`}>
                             {item.text}
                         </p>
