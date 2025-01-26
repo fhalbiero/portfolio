@@ -11,7 +11,7 @@ export default function Photo() {
         animate={{ opacity: 1, transition: { delay: 1, duration: 0.5, ease: "easeIn" } }}
        >
             <motion.div 
-                className="absolute w-[290px] h-[290px] xl:w-[498px] xl:h-[498px] rounded-full mix-blend-lighten"
+                className="absolute w-[290px] h-[290px] xl:w-[436px] xl:h-[436px] rounded-full mix-blend-lighten"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, transition: { delay: 1.5, duration: 0.5, ease: "easeIn" } }}
             >
@@ -26,7 +26,7 @@ export default function Photo() {
             </motion.div>
 
             <motion.svg 
-              className="w-[300px] xl:w-[500px] h-[300px] xl:h-[500px] "
+              className="w-[300px] xl:w-[446px] h-[300px] xl:h-[446px] "
               fill="transparent"
               viewBox={`0 0 506 506`}
               xmlns="http://www.w3.org/2000/svg"

@@ -22,7 +22,7 @@ function Resume() {
     >
       <div className="container mx-auto">
         <Tabs
-          className="flex flex-col gap-[60px] xl:flex-row"
+          className="flex flex-col gap-[60px] xl:flex-row pb-24"
           defaultValue="experience"
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
@@ -49,14 +49,16 @@ function Resume() {
                     {EXPERIENCE.items.map((item, index) => (
                       <li 
                         key={index}
-                        className="bg-gray_dark h-[184px] flex flex-col justify-center items-center lg:items-start gap-1 py-6 px-10 rounded-xl"
+                        className="bg-gray_dark flex flex-col justify-start items-center lg:items-start gap-1 py-6 px-10 rounded-xl"
                       >
                         <span className="text-accent">{item.period}</span>
-                        <h3 className="text-xl text-center lg:text-left max-w-[260px] min-h-[60px]">{item.position}</h3>
-                        <div className="flex items-center gap-3">
-                          <span className="bg-accent w-[6px] h-[6px] rounded-full"></span>
+                        <p className="text-xl text-center lg:text-left max-w-[260px] min-h-[60px] text-white/70">
+                          {item.position} at <span className="text-white font-bold">{item.company}</span>
+                        </p>
+                        <div className="flex items-start gap-3 pt-4">
+                          <span className="bg-accent w-[6px] h-full rounded-full"></span>
                           <p className="text-white/60">
-                            {item.company}
+                            {item.description}
                           </p>
                         </div>
                       </li>
@@ -112,13 +114,13 @@ function Resume() {
                     {SKILLS.description}
                   </p>
                 </div>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 xl:gap-[30px]">
+                <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 xl:gap-[30px]">
                   {SKILLS.items.map((item, index) => (
                     <li key={index}>
                       <TooltipProvider delayDuration={100}>
                         <Tooltip>
-                          <TooltipTrigger className="w-full h-[150px] bg-gray_dark rounded-xl flex justify-center items-center group">
-                            <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                          <TooltipTrigger className="w-full h-[140px] bg-gray_dark rounded-xl flex justify-center items-center group">
+                            <div className="text-4xl group-hover:text-accent transition-all duration-300">
                               {<item.icon />}
                             </div>
                           </TooltipTrigger>

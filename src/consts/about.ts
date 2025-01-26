@@ -4,9 +4,9 @@ export const ABOUT = {
   info: [
     { fieldName: 'Name', fieldValue: 'Fabio Albiero' },
     { fieldName: 'Email', fieldValue: 'fhalbiero@gmail.com' },
-    { fieldName: 'Phone', fieldValue: '+55 11 99999-9999' },
+    { fieldName: 'Phone', fieldValue: '+1 (403) 977-7667' },
     { fieldName: 'Languages', fieldValue: 'Portuguese, English' },
-    { fieldName: 'Experience', fieldValue: '16+ years' },
+    { fieldName: 'Experience', fieldValue: '20+ years' },
     { fieldName: 'Nationality', fieldValue: 'Brazilian' },
     { fieldName: 'Freelance', fieldValue: 'Available' },
   ]

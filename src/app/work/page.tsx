@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import { FaLock } from "react-icons/fa";
 import { PROJECTS } from "@/consts/projects";
 import { Tooltip, TooltipProvider } from "@/components/ui/tooltip";
 import { TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -36,7 +37,7 @@ export default function Work() {
                 {project.num}
               </div>
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-300 capitalize">
-                {project.category} project
+                {project.category}
               </h2>
               <p className="text-white/60 max-w-[540px]">
                 {project.description}
@@ -53,11 +54,12 @@ export default function Work() {
               </ul>
               <div className="border border-white/20"></div>
               <div className="flex gap-4 items-center">
-                <Link href={project.live}>
+                <Link href={project.live} target="_blank">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] flex items-center justify-center bg-white/5 rounded-full group">
-                        <BsArrowUpRight className="text-white text-2xl group-hover:text-accent"/>
+                      <TooltipTrigger className="w-[70px] h-[70px] flex items-center justify-center bg-white/5 rounded-full group relative">
+                        <BsArrowUpRight className={`text-2xl ${project.live ? `text-white group-hover:text-accent` : `text-white/30`}`}/>
+                        {!project.live && <FaLock className="text-white/30 text-1xl absolute right-1 bottom-1"/>}
                       </TooltipTrigger>
                       <TooltipContent>
                         <p>Live Project</p>
@@ -65,11 +67,12 @@ export default function Work() {
                     </Tooltip>
                   </TooltipProvider>
                 </Link>
-                <Link href={project.github}>
+                <Link href={project.github} target="_blank">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] flex items-center justify-center bg-white/5 rounded-full group">
-                        <BsGithub className="text-white text-2xl group-hover:text-accent"/>
+                      <TooltipTrigger className="w-[70px] h-[70px] flex items-center justify-center bg-white/5 rounded-full group relative">
+                        <BsGithub className={`text-2xl ${project.github ? `text-white group-hover:text-accent` : `text-white/30`}`}/>
+                        {!project.github && <FaLock className="text-white/30 text-1xl absolute right-1 bottom-1"/>}
                       </TooltipTrigger>
                       <TooltipContent>
                         <p>Github repository</p>
@@ -93,16 +96,19 @@ export default function Work() {
                   className="w-full"
                 >
                   <div className="h-[460px] relative group flex items-center justify-center bg-gray_dark">
-                    <div className="absolute top-0 bottom-0 w-full bg-primary/10 z-10">
-                      
-                    </div>
                     <div className="relative w-full h-full">
-                      <Image 
-                        src={project.image} 
-                        alt={project.title} 
-                        fill 
-                        objectFit="cover"
-                      />
+                      {project.image ? (
+                        <Image 
+                          src={project.image} 
+                          alt={project.title} 
+                          fill 
+                          objectFit="cover"
+                        />
+                      ) : (
+                        <div className="absolute top-0 bottom-0 w-full bg-primary/10 text-3xl z-10 flex justify-center items-center font-extrabold text-white/30">
+                          {project.title}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </SwiperSlide>
