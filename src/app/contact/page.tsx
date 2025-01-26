@@ -25,7 +25,7 @@ export default function Contact() {
                 {`Let's work together`}
               </h3>
               <p className="text-white/60">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo consequuntur quo iste nisi deleniti ratione maxime quis cupiditate tempore, beatae commodi numquam fuga, ipsum vitae porro dolore. Minus, deleniti explicabo.
+                Contact us for more information about our services and how we can help you.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input 
