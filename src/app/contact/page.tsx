@@ -2,12 +2,38 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { useForm, ValidationError } from '@formspree/react';
 import { Textarea } from "@/components/ui/textarea";
 import { INFO } from "@/consts/info";
 import { motion } from "framer-motion";
 
 export default function Contact() {
+  const [state, handleSubmit] = useForm("moragnqx");
+
+  function handleFormSubmit(event: any) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+
+    handleSubmit({
+      firstName: data.get('firstname')?.toString() || '',
+      lastName: data.get('lastname')?.toString() || '',
+      email: data.get('email')?.toString() || '',
+      phone: data.get('phone')?.toString() || '',
+      message: data.get('message')?.toString() || '',
+    });
+  }
+
+  if (state.succeeded) {
+      return (
+        <div className="container mx-auto text-center my-16">
+          <h1 className="text-4xl text-accent">Message sent!</h1>
+          <p className="text-xl text-white/80 mt-16">
+            Thanks for reaching out! We will get back to you soon.
+          </p>
+        </div>
+      )
+  }
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -20,7 +46,10 @@ export default function Contact() {
       <div className="container mx-auto">
         <div className="flex flex-col gap-[30px] xl:flex-row">
           <div className="xl:w-[54%] order-2 xl:order-none">
-            <form className="flex flex-col gap-6 p-10 bg-gray_dark rounded-xl">
+            <form 
+              className="flex flex-col gap-6 p-10 bg-gray_dark rounded-xl"
+              onSubmit={handleFormSubmit}
+            >
               <h3 className="text-4xl text-accent">
                 {`Let's work together`}
               </h3>
@@ -28,24 +57,37 @@ export default function Contact() {
                 Contact us for more information about our services and how we can help you.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input 
+                <Input
+                  id="firstname"
+                  name="firstname" 
                   type="firstname"
                   placeholder="First Name"
                 />
                 <Input 
+                  id="lastname"
+                  name="lastname"
                   type="lastname"
                   placeholder="Last Name"
                 />
+                <ValidationError 
+                  prefix="Email" 
+                  field="email"
+                  errors={state.errors}
+                />
                 <Input 
+                  id="email"
+                  name="email"
                   type="email"
                   placeholder="Email address"
                 />
                 <Input 
+                  id="phone"
+                  name="phone"
                   type="phone"
                   placeholder="Phone number"
                 />
               </div>
-              <Select>
+              {/* <Select>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select a service"></SelectValue>
                 </SelectTrigger>
@@ -57,14 +99,17 @@ export default function Contact() {
                     <SelectItem value="mst">UI/UX Design</SelectItem>
                   </SelectGroup>
                 </SelectContent>
-              </Select>
+              </Select> */}
               <Textarea 
+                id="message"
+                name="message"
                 className="h-[200px]"
                 placeholder="Type your Message"
               />
               <Button
                 size="md"
                 className="max-w-40"
+                type="submit"
               >
                 Send message
               </Button>

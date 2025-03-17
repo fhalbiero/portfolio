@@ -4,7 +4,7 @@ export const EDUCATION = {
     description: ' I have always been passionate about technology and programming constantly learning and improving my skills.',
     items: [
       { 
-        institution: 'Rocket Seat Euducation', 
+        institution: 'Rocket Seat Education', 
         course: 'Bootcamp Ignite [React Native, Expo, NativeBase] - 60 hrs',
         duration: '2022', 
       },
@@ -14,7 +14,7 @@ export const EDUCATION = {
         duration: '2021', 
       },
       { 
-        institution: 'Rocket Seat Euducation', 
+        institution: 'Rocket Seat Education', 
         course: 'Bootcamp GoStack [Typescript, Node, React, Postgree] - 140 hrs',
         duration: '2020', 
       },
