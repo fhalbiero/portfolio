@@ -8,7 +8,6 @@ const LINKS = [
     { path: "/services", label: "services" },
     { path: "/resume", label: "resume" },
     { path: "/work", label: "work" },
-    { path: "/contact", label: "contact" },
 ]
 
 export default function Nav() {
