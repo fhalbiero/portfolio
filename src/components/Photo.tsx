@@ -16,12 +16,12 @@ export default function Photo() {
                 animate={{ opacity: 1, transition: { delay: 1.5, duration: 0.5, ease: "easeIn" } }}
             >
                 <Image 
-                    src="/assets/photo.png" 
+                    src="/assets/photo1.png" 
                     className="object-contain"
                     priority 
                     quality={100} 
                     fill 
-                    alt="" 
+                    alt="Fabio Albiero photo" 
                 />
             </motion.div>
 
